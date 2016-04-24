@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def fast(a, g ,N):
     g = bin(g)[2:]
     g = g[::-1]
