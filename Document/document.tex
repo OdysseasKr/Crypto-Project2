@@ -37,8 +37,23 @@
 
 % ===== Θέμα 1 =====
 \section*{Θέμα 1}
+\subsection*{({\lt vii})}
+Με $p$ και $q$ γνωστά μπορούμε να υπολογίσουμε το $N$ και $φ(n)$.
+\[N = p \cdot q = 463 \cdot 547 = 253261\]
+\[\phi(n) = (p-1)\cdot(q-1) = 462 \cdot 546 = 252252\]
+
+επομένως το $d$ υπολογίζεται:
+\[ed\equiv1(\textrm{\lt mod} \phi(n)) \Leftrightarrow d = 27473 \]
+
+Τελικά για την αποκρυπτογράφηση του c αρκεί να υπολογισθεί
+\[ c^d (\textrm{\lt mod} \phi(n)) = 13500\]
 
 
+\subsection*{({\lt x})}
+Ισχύει
+\[\phi(n) = (p-1)(q-1) = pq - p - q + 1 = pq - (p+q) + 1\]
+και επειδή $N = pq$
+\[\phi(n) = N - (p+q) + 1\]
 \newpage
 
 
@@ -79,7 +94,13 @@
 \newpage
 % ===== Θέμα 6 =====
 \section*{Θέμα 6}
-
+\subsection*{({\lt i})}
+\[{123454 \over 546542} = {0 + {1 \over {4 + {52726 \over 123454}}}}\]
+\[ = {0 + {1 \over {4 + {1 \over {2 + {18002 \over 52726}}}}}}} = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {16722 \over 18002}}}}}}}}} = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {1 \over {1 + {1280 \over 16722}}}}}}}}}}}\]
+\[ = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {1 \over {1 + {1 \over {13 + {82 \over 1280}}}}}}}}}}}}} = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {1 \over {1 + {1 \over {13 + {1 \over {15 + {50 \over 82}}}}}}}}}}}}}}}} = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {1 \over {1 + {1 \over {13 + {1 \over {15 + {1 \over {1+ {32 \over 50}}}}}}}}}}}}}}}}}}\]
+\[ = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {1 \over {1 + {1 \over {13 + {1 \over {15 + {1 \over {1+ {1 \over {1 + {18 \over 32}}}}}}}}}}}}}}}}}}}} = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {1 \over {1 + {1 \over {13 + {1 \over {15 + {1 \over {1+ {1 \over {1 + {1 \over {1 + {14\over 18}}}}}}}}}}}}}}}}}}}}}} \]
+\[ = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {1 \over {1 + {1 \over {13 + {1 \over {15 + {1 \over {1+ {1 \over {1 + {1 \over {1 + {1 \over {1+ {4 \over 14}}}}}}}}}}}}}}}}}}}}}}}} = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {1 \over {1 + {1 \over {13 + {1 \over {15 + {1 \over {1+ {1 \over {1 + {1 \over {1 + {1 \over {1+ {1 \over {3 + {2\over 4}}}}}}}}}}}}}}}}}}}}}}}}}} \]
+\[ = {0 + {1 \over {4 + {1 \over {2 + { 1 \over {2 + {1 \over {1 + {1 \over {13 + {1 \over {15 + {1 \over {1+ {1 \over {1 + {1 \over {1 + {1 \over {1+ {1 \over {3 + {1\over {2 + 0}}}}}}}}}}}}}}}}}}}}}}}}}}} \]
 \newpage
 
 
