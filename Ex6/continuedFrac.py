@@ -4,39 +4,37 @@ import cmath
 import fast
 import decimal
 
-def contFraction(x):
+def contFraction(x,y):
     """
+    Input: x / y
     Computes a0,a1,a2.... using continued fractions
     """
-    decimal.getcontext().prec = 100
-    x = decimal.Decimal(x)
-    a = []
-    a += [math.floor(x)]
-    x = x - a[0]
-    while x>10**(-6):
-        frac = decimal.Decimal(1)/decimal.Decimal(x)
-        tmp = decimal.Decimal(math.floor(frac))
-        a += [int(tmp)]
-        x = frac - tmp
+    i = 0
+    a = [int(x/y)]
+    x = x - y * a[0]
+    while x > 0:
+        i += 1
+        a = a + [int(y/x)]
+        tmp = x
+        x = y
+        y = tmp
+        x = x - y * a[i]
+
+    if (a[0] != 0):
+        a = [0] + a
     return a
+
 
 def revContFraction(a):
     """
-    Computes convergent fractions
+    Computes one convergent fraction
     """
-    k = len(a) - 1
-    Ns = [1]
-    Ds = [a[k]]
-    i = 0
-    k -= 1
-    while k >= 0:
-        N = Ds[0]
-        D = Ns[0]
-        N += a[k] * D
-        Ns = [N] + Ns
-        Ds = [D] + Ds
-        k -= 1
-    return (Ns, Ds)
+    N = 1
+    D = a[len(a)-1]
 
-#a = contFraction(123454/546542)
-#print(revContFraction(a))
+    for i in range(len(a)-2, -1, -1):
+        N += D * a[i]
+        tmp = N
+        N = D
+        D = tmp
+    return (N,D)
