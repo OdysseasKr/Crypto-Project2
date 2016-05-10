@@ -10,11 +10,11 @@ def contFraction(x,y):
     Computes a0,a1,a2.... using continued fractions
     """
     i = 0
-    a = [int(x/y)]
+    a = [x//y]
     x = x - y * a[0]
     while x > 0:
         i += 1
-        a = a + [int(y/x)]
+        a = a + [y//x]
         tmp = x
         x = y
         y = tmp

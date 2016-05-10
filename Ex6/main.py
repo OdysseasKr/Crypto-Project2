@@ -33,6 +33,7 @@ def wiener(N, e):
     """
     Wiener attack on RSA. Returns d
     """
+    res = []
     a = contFraction(e,N)
     fi = [0]
     n = len(a)
@@ -42,24 +43,33 @@ def wiener(N, e):
         (Ni,Di) = revContFraction(a[1:i+1])
         Ns = Ns + [Ni]
         Ds = Ds + [Di]
-        tmp = (e*Ds[i] - 1)/Ns[i]
+        tmp = (e*Ds[i] - 1)//Ns[i]
         fi += [tmp]
 
     for i in range(1,n):
         if isInt(fi[i]):
             (x1, x2) = quadratic(1, -N+fi[i]-1, N)
             if isInt(x1) and isInt(x2):
-                return Ds[i]
+                res = res + [Ds[i]]
 
-def decrypt(C, d, N):
+    return res
+
+def decrypt(C, ds, N):
     """
     Decrypts array of integers C, using d and N of RSA
     """
     f = open("message.txt","w")
-    M = []
-    for c in C:
-        m = fast.fast(c,d,N)
-        f.write(str(chr(m)))
+    for d in ds:
+        f.write("==== D: " + str(d) + " ====\n")
+        try:
+            for c in C:
+                m = fast.fast(c,d,N)
+                f.write(str(chr(m)))
+            f.write("\n")
+        except:
+            f.write("FAILED")
+            f.write("\n")
+
 
 
 C=[47406263192693509,51065178201172223,30260565235128704,82385963334404268,
@@ -85,5 +95,4 @@ C=[47406263192693509,51065178201172223,30260565235128704,82385963334404268,
 
 
 d = wiener(N,e)
-print(d)
 decrypt(C, d, N)
