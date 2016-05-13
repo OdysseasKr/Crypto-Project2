@@ -43,11 +43,11 @@ def wiener(N, e):
         (Ni,Di) = revContFraction(a[1:i+1])
         Ns = Ns + [Ni]
         Ds = Ds + [Di]
-        tmp = (e*Ds[i] - 1)//Ns[i]
+        tmp = (e*Ds[i] - 1) % Ns[i]
         fi += [tmp]
 
     for i in range(1,n):
-        if isInt(fi[i]):
+        if fi[i] == 0:
             (x1, x2) = quadratic(1, -N+fi[i]-1, N)
             if isInt(x1) and isInt(x2):
                 res = res + [Ds[i]]

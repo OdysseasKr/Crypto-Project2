@@ -1,4 +1,6 @@
 ==== D: 3 ====
 FAILED
+==== D: 4 ====
+FAILED
 ==== D: 20881 ====
  Just because you are a character doesn't mean that you have character
