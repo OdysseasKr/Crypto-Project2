@@ -25,14 +25,14 @@ def calculate(m1, m2, m3, n1, n2, n3):
 
     x = (n1 * u1 * M1) + (n2 * u2 * M2) + (n3 * u3 * M3)  # 82017
 
-    # x = res mod M
-    res = f.modinverse(x, M)
+    # answer = x mod M
+    answer = x % M  # 621
 
-    return res
+    return answer
 
 
 def checkCRT(m1, m2, m3):
-    """Check if the numbers are primes from each other."""
+    """Check if the numbers are primes one another."""
     if gcd(m1, m2)[0] == 1:
         if gcd(m1, m3)[0] == 1:
             if gcd(m2, m3)[0] == 1:
