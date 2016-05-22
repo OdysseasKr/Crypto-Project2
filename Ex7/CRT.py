@@ -12,14 +12,14 @@ def calculate(m1, m2, n1, n2):
     M2 = M / m2  # 5
 
     # ui * Mi = 1 mod mi
-    u1 = modinverse(M1, m1)  # 1
+    u1 = modinverse(M1, m1)  # [0]1
 
     u2 = modinverse(M2, m2)  # 9
 
     x = (n1 * u1 * M1) + (n2 * u2 * M2)
 
     #  x = res mod M
-    result = modinverse(x, M)
+    result = x % M
 
     return result
 
