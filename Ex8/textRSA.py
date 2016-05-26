@@ -1,9 +1,8 @@
 #! /usr/bin/env python
 
-"""Cracking the textbook RSA."""
+"""Crack the textbook RSA with CRT. Same exponent problem."""
 
 import CRT
-
 
 N = [391, 55, 87]
 e = [3, 3, 3]
