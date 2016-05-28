@@ -8,12 +8,12 @@ p = 5
 q = 11
 c = 14  # c = y
 
-# solve x^2 = 14 mod 5 = 2
+# solve x^2 = 14 mod 5
 for i in range(c):
     if ((i ** 2) % p == c % p):
         x1 = i
         break
-# solve x^2 = 14 mod 11 = 5
+# solve x^2 = 14 mod 11
 for i in range(c):
     if ((i ** 2) % q == c % q):
         x2 = i
