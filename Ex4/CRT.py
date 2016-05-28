@@ -8,25 +8,25 @@ import modinverse as f
 
 def calculate(m1, m2, m3, n1, n2, n3):
     """Calculate CRT."""
-    M = m1 * m2 * m3  # 3876
+    M = m1 * m2 * m3
 
-    M1 = M / m1  # 228
+    M1 = M / m1
 
-    M2 = M / m2  # 323
+    M2 = M / m2
 
-    M3 = M / m3  # 204
+    M3 = M / m3
 
     # ui * Mi = 1 mod mi
-    u1 = f.modinverse(M1, m1)  # 5
+    u1 = f.modinverse(M1, m1)
 
-    u2 = f.modinverse(M2, m2)  # 11
+    u2 = f.modinverse(M2, m2)
 
-    u3 = f.modinverse(M3, m3)  # 15
+    u3 = f.modinverse(M3, m3)
 
-    x = (n1 * u1 * M1) + (n2 * u2 * M2) + (n3 * u3 * M3)  # 82017
+    x = (n1 * u1 * M1) + (n2 * u2 * M2) + (n3 * u3 * M3)
 
     # answer = x mod M
-    answer = x % M  # 621
+    answer = x % M
 
     return answer
 
